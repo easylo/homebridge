@@ -1,0 +1,12 @@
+version: '3'
+services:
+  homebridge:
+    build: .
+    # image: laurentrichard/homebridge:latest
+    volumes:
+      - ./homebridge:/root/.homebridge
+    ports:
+      - "5353:5353"
+      - "51826:51826"
+    environment:
+      - HOMEBRIDGE_PLUGINS=homebridge-alexa homebridge-xiaomi-roborock-vacuum
